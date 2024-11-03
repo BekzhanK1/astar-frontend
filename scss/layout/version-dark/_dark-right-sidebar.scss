@@ -1,0 +1,21 @@
+[data-theme-version="dark"] {
+    .sidebar-right {
+        background-color: lighten($d-bg, 3.2%);
+
+        .nav-tabs {
+            background-color: $border-color/* lighten($d-bg, 3.2%) */;
+            border-bottom: unset /* 1px solid $d-bg */;
+			
+
+            .nav-link {
+                &.active {
+                    background-color: $d-bg;
+                }
+				&:hover{
+					color: $primary;
+				}
+            }
+        }
+		
+    }
+} 

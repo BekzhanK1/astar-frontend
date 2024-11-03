@@ -1,0 +1,58 @@
+.kanban-bx{
+	display: -webkit-box;
+    width: 100%;
+    overflow-x: auto;
+	flex-wrap:nowrap;
+	.col{
+		width:360px;
+		flex-grow: unset;
+		flex-basis:unset;
+		.card{
+			height:auto;
+			span.line{
+				position:absolute;
+				height:4px;
+				width:100%;
+				top:0;
+				left:0;
+				border-radius:1rem;
+			}
+		}
+	}
+	&::-webkit-scrollbar {
+		background-color: #ECECEC;
+		width: 8px;
+		height: 8px;
+		@at-root [data-theme-version="dark"] & {
+			background-color:#000;
+		}
+	}
+	&::-webkit-scrollbar-track { 
+		@at-root [data-theme-version="dark"] & {
+			background-color: $d-border;
+			border-radius: 10px;
+		}
+	}
+	&::-webkit-scrollbar-thumb{
+		background-color: #7e7e7e;
+		border-radius: 10px;
+		@at-root [data-theme-version="dark"] & {
+			background-color: $dark-card;
+		}
+	}
+	@include respond ('phone-land'){
+		display: block;
+		width: auto;
+		.col{
+			width:100%;
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+	}
+}
+.title-num{
+	font-size:32px;
+	@include respond ('phone'){
+		font-size:20px;
+	}
+}

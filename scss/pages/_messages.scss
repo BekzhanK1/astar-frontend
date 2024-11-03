@@ -1,0 +1,80 @@
+//chat box
+.chat-box{
+	.message-sent {
+		width: 62%;
+		text-align:right;
+		p{
+			background:var(--primary);
+			text-align:left;
+			border-radius:20px 20px 0 20px;
+			padding:10px 20px;
+			color:$white;
+			font-weight:300;
+		}
+		@include respond ('phone'){
+			width:100%;
+			p{
+				border-radius: 10px 10px 0 10px;
+				padding: 5px 8px;
+			}
+		}
+	}
+	
+	.message-received{
+		width: 62%;
+		text-align:left;
+		p{
+			background:rgba($dark,0.14);
+			text-align:left;
+			font-size:14px;
+			border-radius:0 20px 20px 20px;
+			padding:10px 20px;
+			color:$black;
+			font-weight:400;
+			@at-root [data-theme-version="dark"] & {
+				color: $white;
+			}
+		}
+		@include respond ('phone'){
+			width:100%;
+			p{
+				font-size:12px;
+				border-radius:0 10px 10px 10px;
+				padding: 5px 8px;
+			}
+		}
+	}	
+	.type-massage{
+		border:2px solid $border-color!important;
+		margin: 1.25rem 1.875rem 1.25rem;
+		padding:10px;
+		border-radius:$radius;
+		textarea{
+			border:0;
+			height: 56px;
+			resize: none;
+			padding: 17px 15px;
+		}
+		@include respond ('phone'){
+			margin: 1rem;
+			padding: 5px;
+			textarea{
+				font-size:12px;
+				padding: 11px 5px;
+				height: 40px;
+			}
+		}
+		@at-root [data-theme-version="dark"] & {
+				border:0 !important;
+			}
+	}
+	.title-nm{
+		font-size:20px;
+		@include respond ('phone'){
+			font-size:15px;
+		}
+	}
+}
+.dropdown .text-primary-active{
+		color:$primary;
+	}

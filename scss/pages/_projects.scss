@@ -1,0 +1,38 @@
+.bolt-icon{
+	height:55px;
+	width:55px;
+	line-height:55px;
+	text-align:center;
+	min-width:55px;
+	display:block;
+	background:var(--rgba-primary-1);
+	font-size:25px;
+	color:$primary;
+	border-radius:5rem;
+	@include respond ('phone'){
+		height:45px;
+		width:45px;
+		line-height:45px;
+		min-width:45px;
+	}
+}
+.project-bx{
+	.title{
+		font-size:20px;
+	}
+	.img-2{
+		width:55px;
+	}
+	@include respond ('phone'){
+		.title{
+			font-size:15px;
+		}
+		.img-2{
+			width:45px;
+		}
+	}
+}
+
+.text-primary{
+	color:var(--primary)!important;
+}

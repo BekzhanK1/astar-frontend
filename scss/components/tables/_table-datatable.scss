@@ -1,0 +1,253 @@
+//demo styles
+table#example{
+    padding: 0rem 0 2rem 0;
+}
+table.dataTable{
+	color:$black;
+	border-radius:$radius;
+	@at-root [data-theme-version="dark"] & {
+		color:$white;
+	}
+}
+#example2_wrapper {
+    .dataTables_scrollBody {
+        max-height: 33.25rem !important;
+    }
+}
+
+#employees, #custommers {
+    padding: .5rem 0 1rem 0;
+}
+//////////
+.dataTables_wrapper .dataTables_paginate{
+    padding:10px 0;
+	@include respond('laptop') {
+		padding:5px 0;
+	}
+}
+table.dataTable thead th, 
+table.dataTable thead td {
+    padding: 30px 12px;
+    border-bottom: 1px solid $border;
+    @include respond('laptop') {
+		padding:8px 15px;
+	}
+}
+
+table.dataTable tfoot th,
+table.dataTable tfoot td{
+    border-top: 0;
+}
+
+table.dataTable tbody td{
+    background: #fff!important;
+	@at-root [data-theme-version="dark"] & {
+		background-color:$dark-card !important;
+		border-color:$d-border !important;
+	}
+}
+
+table.dataTable thead th{
+    color: $black;
+	font-size:18px;
+	white-space: nowrap;
+    font-weight: 600;
+    @at-root [data-theme-version="dark"] & {
+        color: $white;
+		border-color: $d-border;
+    }
+	@include respond('laptop') {
+		font-size:14px;
+	}
+}
+
+table.dataTable tbody td{
+	font-size:16px;
+    padding: 1.25rem 0.75rem;
+	@include respond('laptop') {
+		padding:8px 15px;
+		font-size:14px;
+	}
+}
+
+table.dataTable tr.selected{
+    color: var(--primary);
+}
+table.dataTable.border-no td{
+	border-color:$white!important;
+}
+table.dataTable tfoot th{
+    color: $dark;
+    font-weight: 600;
+    @at-root [data-theme-version="dark"] & {
+        color: $white;
+    }
+}
+.dataTables_wrapper {
+    input[type="search"], input[type="text"], select {
+        border: 1px solid #e2e2e2;
+        padding: .3rem 0.5rem;
+        color: rgba(113, 93, 93, 1);
+        border-radius: 5px;
+        @at-root [data-theme-version="dark"] & {
+            background: $d-bg;
+            border-color: $d-border;
+            color: $white;
+        }
+    }
+	.dataTables_length{
+		margin-bottom: 15px;
+		   @at-root [data-theme-version="dark"] & {
+			color:$white;
+		   }
+		.bootstrap-select{
+			width: 80px!important;
+			margin: 0 5px;
+		}
+	}
+}
+table.dataTable.no-footer{
+    border-bottom: 0;
+}
+.min-w850{
+	min-width:850px;
+}
+
+.rounded-lg{
+	min-width:30px;
+}
+.dataTables_scroll{
+    padding: 1rem 0;
+
+    &Foot{
+        padding-top: 1rem;
+    }
+} 
+.dataTables_wrapper .dataTables_length, 
+.dataTables_wrapper .dataTables_filter {
+    @include media-breakpoint-down(md) {
+        text-align: left;
+    }
+}
+.dataTablesCard{
+	background-color: #fff;
+	box-shadow: 0px 12px 23px 0px rgba(62, 73, 84, 0.04);
+	border-radius: 0;
+	@at-root [data-theme-version="dark"] & {
+		background-color:$dark-card;
+		tbody tr:hover{
+			background:$dark-card!important;
+		}
+	}
+	tbody tr:hover{
+		background:$white!important;
+		td{
+			background:transparent!important;
+		}
+	}
+}
+
+.dataTables_wrapper .dataTables_info {
+    padding:10px 0;
+	@include respond('laptop') {
+		padding:8px 0;
+	}
+}
+table.dataTable.row-border tbody th, 
+table.dataTable.row-border tbody td, 
+table.dataTable.display tbody th, 
+table.dataTable.display tbody td {
+    border-color: $border;
+    @at-root [data-theme-version="dark"] & {
+        border-color: $d-border;
+    }
+}
+table.dataTable thead .sorting{
+	background-position: center right 15px;
+}
+
+.dataTables_wrapper .dataTables_paginate{
+	background:transparent;
+	border-radius:$radius;
+	span{
+		border-radius:0;
+		display: inline-block;
+		margin: 0 0;
+			
+		a{
+			color:$white;
+			background: transparent !important;
+		}
+	}
+	.paginate_button{
+		border: 0 !important;
+		padding: 10px 20px;
+		border:0px solid var(--primary) !important;
+		background: var(--rgba-primary-1) !important;
+		border-radius: $radius;
+		color:var(--primary) !important;
+		font-size:16px;
+		margin: 0 5px;
+		display:inline-block;
+		 @at-root [data-theme-version="dark"] & {
+			background: $dark-card !important;
+			color:$white !important;
+		 }
+		@include respond('laptop') {
+			padding: 8px 15px;
+			font-size:14px;
+		}
+		&:hover,
+		&.current:hover,
+		&.current{
+			color:$white !important;
+			background:var(--primary) !important;
+		}
+		
+		&.previous,
+		&.next{
+			background:transparent!important;
+			color:var(--primary) !important;
+			border:1px solid var(--primary) !important;
+			margin: 0 10px;
+			 @at-root [data-theme-version="dark"] & {
+				border-color:$d-border !important;
+				color:$white !important;
+			 }
+			&:hover{
+				background:var(--primary) !important;
+				color:$white !important;
+			}
+			
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

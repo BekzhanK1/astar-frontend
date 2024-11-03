@@ -1,0 +1,94 @@
+[data-theme-version="dark"] {
+
+    &[data-sidebar-style="mini"] {
+		.dlabnav .metismenu li > ul{
+			background-color: $dark-card;
+		}
+	}
+	
+	.fixed-content-box{
+		background-color: $dark-card;
+		.head-name{
+			background:$dark-card;
+			color: $white;
+			border-color:$d-border; 
+		}
+		& + .header + .dlabnav{
+			background-color: $d-bg;
+		}
+	}
+	
+    .dlabnav {
+        background-color: $dark-card;
+		box-shadow:unset;
+        .metismenu {
+    
+    
+            &>li {
+		
+                &>a {
+                    color: darken($color: $white, $amount: 30%);
+                }
+    
+                &:hover, 
+                &:focus, 
+                &.mm-active {
+    
+                    &>a {
+                        color: $white;
+    
+                        &::after {
+                            border-color: $white;
+                        }
+                    }
+                }
+    
+                &.mm-active {
+					
+                    ul {
+						
+                        ul {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+    
+            //one step dropdown
+            ul  {
+                
+				&:after{
+					background-color:$d-border;
+				}
+				
+                a {
+    
+                    &:hover,
+                    &:focus, 
+                    &.mm-active {
+                        color: $white;
+                    } 
+					&:before{
+						background-color: $white;
+					}
+					
+                }
+            }
+            
+            a {
+                color: darken($color: $white, $amount: 30%);
+            }
+    
+            .has-arrow {
+                &:after {
+                    border-color: $white;
+                }
+            }
+        }
+    }
+    
+    .menu-toggle .dlabnav .metismenu  ul.mm-collapse {
+		background-color: $dark-card !important;
+	}
+
+}

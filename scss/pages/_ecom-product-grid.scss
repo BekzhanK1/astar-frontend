@@ -1,0 +1,18 @@
+.new-arrival-product{
+	.new-arrivals-img-contnent{
+		overflow:hidden;
+		border-radius: $radius;
+		
+		img{
+			width:100%;
+			@include transitionMedium;
+		}
+	}
+	&:hover .new-arrivals-img-contnent img{
+		transform: scale(1.5) translateY(12%);
+		-moz-transform: scale(1.5) translateY(12%);
+		-webkit-transform: scale(1.5) translateY(12%);
+		-ms-transform: scale(1.5) translateY(12%);
+		-o-transform: scale(1.5) translateY(12%);
+	}
+}

@@ -1,0 +1,139 @@
+@media (min-width: 992px) {
+    [data-container="boxed"] {
+		background-color: var(--primary);
+        #main-wrapper {
+            max-width: 1199px;
+            margin: 0 auto;
+			background-color: #f4f4f4;
+			
+
+            @at-root [direction="rtl"]#{&} {
+                text-align: right;
+            }
+        }
+		@at-root [data-theme-version="dark"]#{&} {
+			.footer{
+					background-color:$dark-card;
+			}
+		}
+    }
+}
+[data-layout="horizontal"][data-container="boxed"] {
+	@at-root [data-theme-version="dark"]#{&} {
+		.content-body{
+				border-left: 1px solid $d-border;
+		}
+	}
+}
+[data-sidebar-style="compact"][data-container="boxed"]{
+	 .content-body {
+		margin-left: 11.2rem;
+	}
+} 
+ [data-container="boxed"][data-sidebar-style="overlay"]{
+	@at-root [data-theme-version="dark"]#{&} {
+		.content-body{
+			border-left: 1px solid $d-border;
+		}
+	}
+ }  
+    
+@include custommq($min: 1350px) {
+    [data-layout="vertical"][data-sidebar-style="overlay"][data-container="boxed"][data-header-position="fixed"] {
+        .header {
+            width: 1199px;
+        }
+    }
+}
+
+@include custommq($min: 1200px, $max: 1349px) {
+    [data-layout="vertical"][data-sidebar-style="overlay"][data-container="boxed"][data-header-position="fixed"] {
+        .header {
+            width: 1199px;
+        }
+    }
+}
+
+
+[data-header-position="fixed"][data-layout="horizontal"][data-container="boxed"] {
+    .dlabnav {
+        max-width: 1199px;
+    }
+} //ok
+
+[data-layout="horizontal"][data-container="boxed"][data-header-position="fixed"] {
+    .header {
+        width: 1199px;
+    }
+}
+
+[data-layout="horizontal"][data-container="boxed"][data-header-position="fixed"][data-sidebar-style="mini"] {
+    .header {
+        width: 1199px;
+		padding-left: 12.5rem;
+    }
+	
+	
+}
+[data-container="boxed"][data-sidebar-style="mini"]{
+	.nav-header{
+		width:5rem;
+	}
+}
+
+[data-container="boxed"]{
+	
+	.header {
+		padding-left: 11.3rem;
+		width: 74.9375rem;
+    }
+	.nav-header {
+		width:12.5rem;
+		.brand-logo{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+
+    .metismenu.fixed {
+        left: auto;
+        max-width: 1199px;
+    }
+
+    .page-titles {
+        margin-bottom: 1rem;
+        padding: 15px 15px;
+		margin-left: 0px; 
+		margin-right: 0px;
+    }
+	
+@at-root [data-theme-version="dark"]#{&} {
+	.content-body{
+		background:$d-bg;
+		border-right:1px solid $d-border;
+	}
+}
+    .content-body .container-fluid {
+        padding: 0.9375rem 0.9375rem 0 0.9375rem;
+    }
+}
+
+
+[data-layout="vertical"][data-container="boxed"][data-sidebar-position="fixed"][data-header-position="static"][data-sidebar-style="overlay"] {
+    .nav-header {
+        position: absolute;
+    }
+
+    .menu-toggle {
+        .dlabnav {
+            position: absolute;
+        }
+    }
+}
+
+[data-container="boxed"][data-sidebar-position="fixed"][data-layout="horizontal"] {
+    .dlabnav.fixed {
+        left: auto;
+        max-width: 1199px;
+    }
+}

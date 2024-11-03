@@ -1,0 +1,85 @@
+.contact-bx{
+	border-width:2px;
+	border-color:$white;
+	.image-bx{
+		display:inline-block;
+		position:relative;
+		span.active{
+			height:18px;
+			width:18px;
+			position:absolute;
+			bottom: 3px;
+			right: 3px;
+			border-radius:2rem;
+			background:$success;
+			border:4px solid $white;
+		}
+	}
+	ul{
+		display:flex;
+		li{
+			a{
+				color:var(--primary);
+				font-size: 25px;
+				padding-right: 20px;
+			}
+		}
+	}
+	&:hover{
+		border-color:var(--primary);
+		box-shadow:0px 0px 20px rgba(var(--primary),0.1);
+	}
+	@include respond ('phone-land'){
+		.media{
+			display:block;
+			text-align:center;
+			.image-bx{
+				margin-right:0px!important;
+				margin-bottom: 10px;
+			}
+		}
+		ul{
+			justify-content:center;
+			li{
+				a{
+					padding: 0 10px;
+				}
+			}
+		}
+	}
+}
+.profile-card{
+	.image-bx{
+		display:inline-block;
+		position:relative;
+		span.active{
+			height:24px;
+			width:24px;
+			position:absolute;
+			bottom: 3px;
+			right: 3px;
+			border-radius:2rem;
+			background:$success;
+			border:4px solid $white;
+		}
+	}
+	ul{
+		display:flex;
+		justify-content:center;
+		padding:10px 0px 30px;
+		li{
+			a{
+				height:50px;
+				width:50px;
+				display:inline-block;
+				line-height:50px;
+				text-align:center;
+				background:rgba(var(--primary),0.1);
+				color:var(--primary);
+				font-size:25px;
+				border-radius:5rem;
+				margin:0px 8px;
+			}
+		}
+	}
+}

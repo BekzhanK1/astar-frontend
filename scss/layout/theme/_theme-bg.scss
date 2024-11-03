@@ -1,0 +1,333 @@
+//background for nav header
+@each $name, $color in $theme_backgrounds {
+    [data-nav-headerbg="#{$name}"][data-theme-version="dark"],
+    [data-nav-headerbg="#{$name}"] {
+        @if $name != "color_1"  {
+            .nav-header {
+                background-color: $color;
+				border-bottom:1px solid lighten($color: $color, $amount: 10%) !important;
+				
+                .brand-logo {
+                    color: $white;
+					border:none;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+				.logo-abbr{
+					svg{
+						g path{	
+							fill:$white;
+						}
+					}
+				}
+				.brand-title{
+					svg{
+						g{
+								fill:$white;
+						}
+					}
+				}
+				.hamburger .line{
+					background:#fff;
+				}
+				
+            }
+			&[data-sidebar-style="full"][data-layout="vertical"]{
+				.menu-toggle .nav-header .nav-control .hamburger .line{
+					background:#fff ;
+				}
+			}
+			
+        }
+		
+	}
+}
+
+
+
+//background for header 
+@each $name, $color in $theme_backgrounds {
+    [data-headerbg="#{$name}"][data-theme-version="dark"],
+    [data-headerbg="#{$name}"] {
+
+        @if $name != "color_1"  {
+            .header {
+                background-color: $color;
+                color: $white;
+				border-color:lighten($color: $color, $amount: 10%) ;
+				.search-area .input-group-text{
+					border-color:lighten($color: $color, $amount: 10%) ;
+					background-color: transparent;
+				}
+				.form-control{
+					border-color:lighten($color: $color, $amount: 10%) ;
+					color: $white;
+				}
+            }
+			
+			.header-left {
+                input {
+                    border-color: lighten($color: $color, $amount: 10%);
+                    background-color: lighten($color: $color, $amount: 10%) !important;
+                    color: $white;
+                    // border-right-color: transparent;
+
+                    &::placeholder {
+                        color: $white;
+                    }
+
+                    &:focus {
+                        border-color: darken($color: $color, $amount: 10%);
+                    }
+                }
+				.search_icon{
+				    background-color: lighten($color: $color, $amount: 10%)  !important;
+					i{
+						color: #fff;
+					}
+				}
+
+                .btn {
+                    background-color: darken($color: $color, $amount: 10%);
+                    border-color: darken($color: $color, $amount: 10%);
+
+                    &:hover, 
+                    &:focus, 
+                    &:active {
+                        background-color: darken($color: $color, $amount: 20%);
+                        border-color: darken($color: $color, $amount: 20%);
+                    }
+                }
+            }
+
+            .header-right {
+                .dropdown {
+                    &>a {
+                        color: rgba(255,255,255,0.7);
+						border-color:lighten($color: $color, $amount: 10%) ;
+                    }
+                }
+				.pulse-css{
+					background-color:$white;
+					&:after,
+					&:before{
+						background-color:inherit;
+					}
+				}
+				.notification_dropdown .nav-link{
+					background-color: transparent;
+					svg{
+						path{
+							fill: rgba(255,255,255,0.7);
+						}
+					}
+				}
+				.right-sidebar a{
+					border-color:rgba(255,255,255,0.1);
+					color:$white;
+				}
+				.header-profile > a.nav-link .header-info {
+					strong{
+						color:$white;
+					}
+					span,
+					small{
+						color:rgba(255,255,255,0.7);
+					}
+				}
+			}
+            .nav-control {
+                background-color: lighten($color: $color, $amount: 10%);
+                color: $white;
+            }
+			.hamburger .line{
+				background-color:rgba(255,255,255,0.7);
+			}
+			.header-left .dashboard_bar {
+				color: $white;
+			}
+			.header-info{
+				.text-black{
+					color: $white !important;
+				}
+			}
+			.search-area:hover .form-control {
+				border-color: rgba(255, 255, 255, 0.5);
+			}
+			.search-area{
+				.input-group-text{
+					i{
+						font-size: 18px;
+						color:rgba(255,255,255,0.5);
+					}	
+				}
+					.form-control::placeholder {
+						color:$white;
+					}
+			}
+			.search-area .form-control:hover{
+				border-color: lighten($color: $color, $amount: 10%);
+			}
+			.search-area .form-control:focus{
+				border-color: lighten($color: $color, $amount: 10%);
+			}
+        }
+		
+		
+    }
+}
+
+//styles for sidebar
+@each $name, $color in $theme_backgrounds {
+    [data-sidebarbg="#{$name}"][data-theme-version="dark"],
+    [data-sidebarbg="#{$name}"] {
+        @if $name != "color_1" {
+			
+			.dlabnav {
+                background-color: $color;
+				.menu-tabs li a.active{
+					color: $color;
+				}
+				.add-menu-sidebar{
+					background:$color;
+					border:1px solid rgba(255,255,255,0.5);
+				}
+                .metismenu {
+					.nav-label{
+						color:rgba(255,255,255,0.7);
+						border-color:rgba(255,255,255,0.2);
+					}
+					li{
+						a{
+							color:rgba(255,255,255,0.7) !important;
+							i{
+								color:rgba(255,255,255,0.7) !important;
+							}
+							&:before{
+								background-color:$white;
+							}
+						}
+					}
+					li.mm-active{
+						a{
+							color:$white;
+						}
+					}
+					ul{
+						background-color:$color !important;
+						&>li {
+							&>a {
+								
+								color:  rgba(255,255,255,0.7); //darken($color: $white, $amount: 0%);
+								svg{
+									color:rgba(255,255,255,0.7);
+								}		
+								g [fill] {
+									fill: rgba(255,255,255,0.7);
+								}		
+							}
+
+							&:hover, 
+							&:focus, 
+							&.mm-active {
+				
+								&>a {
+									color: $white;
+									g [fill] {
+										fill:$white;
+									}	
+									svg{
+										color:$white;
+									}	
+									// &::after {
+									//     border-color: transparent transparent $white transparent;
+									// }
+								}
+							}
+							@at-root [data-layout="horizontal"]#{&} {
+								// &:not(:last-child) {
+									border-color: lighten($color: $color, $amount: 10%);
+								// }
+							}
+						}
+
+						a {
+							color: rgba(255,255,255,0.7);
+
+							&:hover, 
+							&:focus, 
+							&.mm-active {
+								color: $white;
+							}
+						}
+					}
+                    ul {
+                        border-color: rgba(255,255,255,0.2);
+						&:after{
+							background-color: rgba(255,255,255,0.2);
+						}
+                    }
+
+                    // .has-arrow {
+                    //     &:after {
+                    //         border-color: transparent transparent darken($color: $white, $amount: 30%) transparent;
+                    //     }
+                    // }
+                }
+				.copyright{
+					color: rgba(255,255,255,0.7);
+				}
+			
+            }
+			
+			&[data-sidebar-style="mini"][data-layout="vertical"]{
+				.dlabnav .metismenu li > ul{
+					background-color: lighten($color: $color, $amount: 10%);
+				}
+				.dlabnav .metismenu > li.mm-active > a,
+				.dlabnav .metismenu > li:hover > a{
+					background-color: lighten($color: $color, $amount: 10%);
+				}
+			}
+			&[data-sidebar-style="full"][data-layout="vertical"]{
+				.menu-toggle .dlabnav .metismenu li > ul,
+				.menu-toggle .dlabnav .metismenu > li.mm-active > a,
+				.menu-toggle .dlabnav .metismenu > li:hover > a{
+					background-color: lighten($color: $color, $amount: 10%);
+				}
+			}
+			&[data-sidebar-style="icon-hover"][data-layout="vertical"]{
+				.dlabnav .metismenu ul{
+					border-color: rgba(255,255,255,0.2);
+				}	
+			}
+			&[data-layout="horizontal"]{
+				.dlabnav .metismenu > li{
+					border-color: rgba(255,255,255,0.2);
+				}
+			}
+        }
+	}
+	[data-sidebarbg="#{$name}"][data-sidebar-style="modern"]{
+		@if $name != "color_1" {
+			.dlabnav .metismenu > li.mm-active > a {
+				background-color: rgba(255,255,255,0.1);
+			}
+		}
+	}
+
+	[data-headerbg="transparent"]{
+		.header{
+			box-shadow: none;
+			background: transparent;
+		}
+	}
+	[data-headerbg="color_1"]{
+		.nav-header .hamburger.is-active .line,
+		.nav-header .hamburger .line{
+			background:var(--primary) ;
+		}
+	}
+}
