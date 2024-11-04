@@ -6393,13 +6393,15 @@ textarea.form-control-lg {
   margin-bottom: 0 !important; }
 
 .mb-1 {
-  margin-bottom: 0.25rem !important; }
+  margin-bottom: 0.25rem !important;
+  margin-top: 15px;
+}
 
 .mb-2 {
   margin-bottom: 0.5rem !important; }
 
 .mb-3 {
-  margin-bottom: 1rem !important; }
+  margin-bottom: 0.5rem !important; }
 
 .mb-4 {
   margin-bottom: 1.875rem !important; }
@@ -6651,7 +6653,7 @@ textarea.form-control-lg {
   text-align: right !important; }
 
 .text-center {
-  text-align: center !important; }
+  text-align: left !important; }
 
 .text-decoration-none {
   text-decoration: none !important; }
@@ -8718,7 +8720,9 @@ label {
 .img-fix {
   width: 100%;
   height: 100%;
-  object-fit: cover; }
+  object-fit: cover;
+  margin-left: 0px;
+}
 
 .content-body .container {
   margin-top: 40px; }
@@ -21972,7 +21976,10 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 #loginForm {
   cursor: auto; }
-
+.loginimg{
+  display: block;
+  left: 0;
+}
 .blockMsg {
   border: 0px !important;
   width: 20% !important; }
@@ -24445,6 +24452,20 @@ button {
   border-radius: 0.5rem;
   box-shadow: 0px 12px 23px 0px rgba(92, 55, 153, 0.04);
   height: calc(100% - 30px); }
+  .login-card{
+    margin-bottom: 1.875rem;
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+  background-color: #fff;
+  transition: all .5s ease-in-out;
+  border-radius: 1rem;
+  }
+  .loginimg{
+    position: relative;
+    margin-left: 0;
+    
+  }
   @media only screen and (max-width: 575px) {
     .card {
       margin-bottom: 0.938rem;

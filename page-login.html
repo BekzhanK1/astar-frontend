@@ -29,33 +29,27 @@
 	<div class="container h-100">
 		<div class="row h-100 align-items-center justify-contain-center">
 			<div class="col-xl-12">
-				<div class="card">
+				<div class="login-card">
 					<div class="card-body p-0">
 						<div class="row m-0">
-							<div class="col-xl-6 col-md-6 sign text-center">
-								<div>
-									<div class="text-center my-5">
-										<a href="index.html"><img src="images/logo-dark.png" alt=""></a>
-									</div>
-									<img src="images/log.png" class="img-fix bitcoin-img sd-shape7"></img>
+							<div class="col-xl-6 col-md-6 sign text-center" style="padding-left: 0;">
+								<div class="loginimg" >
+									<img src="images/login_backgoround.png" class="img-fix bitcoin-img sd-shape7" style="border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;"></img>
 								</div>
 							</div>
 							<div class="col-xl-6 col-md-6">
 								<div class="sign-in-your py-4 px-2">
 									<h4 class="fs-20">Sign in your account</h4>
-									<span>Welcome back! Login with your data that you entered<br> during registration</span>
-									<div class="login-social">
-										<a href="javascript:void(0);" class="btn d-block btn-primary light my-3"><i class="fa fa-google me-2"></i>Login with Google</a>
-										<a href="javascript:void(0);" class="btn d-block btn-primary light my-3"><i class="fa fa-facebook-f me-2"></i>Login with Facebook</a>
-									</div>
-									<form action="index.html">
+									<span>Welcome back! Login with your data that JuzEng provided you :)</span>
+									<form action="">
 										<div class="mb-3">
 											<label class="mb-1"><strong>Email</strong></label>
-											<input type="email" class="form-control" value="hello@example.com">
+											<input type="email" class="form-control" placeholder="hello@example.com">
 										</div>
 										<div class="mb-3">
 											<label class="mb-1"><strong>Password</strong></label>
-											<input type="password" class="form-control" value="Password">
+											<input type="password" class="form-control" placeholder="Password">
 										</div>
 										<div class="row d-flex justify-content-between mt-4 mb-2">
 											<div class="mb-3">
@@ -69,7 +63,7 @@
 											</div>
 										</div>
 										<div class="text-center">
-											<button type="submit" class="btn btn-primary btn-block">Sign Me In</button>
+											<button type="submit" class="btn btn-primary btn-block" style="display: block; margin: 0 auto;">Sign Me In</button>
 										</div>
 									</form>
 								</div>
@@ -90,6 +84,84 @@
     <script src="./js/custom.min.js"></script>
     <script src="./js/dlabnav-init.js"></script>
 	<script src="./js/styleSwitcher.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const form = document.querySelector('form');
+			form.addEventListener('submit', async function(event) {
+				event.preventDefault(); // Prevent the default form submission
+		
+				const email = form.querySelector('input[type="email"]').value;
+				const password = form.querySelector('input[type="password"]').value;
+		
+				const payload = {
+					email: email,
+					password: password
+				};
+		
+				console.log('Request payload:', payload);
+		
+				try {
+					const response = await fetch('http://localhost:8080/api/token/', {
+						method: 'POST',
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(payload)
+					});
+		
+					if (!response.ok) {
+						const errorData = await response.json();
+						console.error('Login failed:', errorData);
+						
+						// Check if alert already exists
+						if (!document.querySelector('.alert')) {
+							// Create alert div
+							const alertDiv = document.createElement('div');
+							alertDiv.className = 'alert alert-danger alert-dismissible fade show';
+							alertDiv.style.height = '2.6rem';
+							alertDiv.style.padding = '0.5rem 1rem';
+							alertDiv.innerHTML = `
+								<button type="button" class="close h-100" data-bs-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span></button>
+								<strong>Error!</strong> ${errorData.message || 'Invalid credentials'}.
+							`;
+		
+							// Insert the alert into the DOM (above the form)
+							form.querySelector('input[type="password"]').parentElement.insertAdjacentElement('afterend', alertDiv);
+						}
+		
+						return;
+					}
+		
+					const data = await response.json();
+					console.log('Login successful:', data);
+		
+					// Store token and possibly other data in localStorage
+					localStorage.setItem('access_token', data.access);
+					localStorage.setItem('refresh_token', data.refresh);
+					localStorage.setItem('role', data.role);
+		
+					if (data.role == "superadmin" || data.role == "supervisor"){
+						window.location.href = 'calendar.html';
+					}
+					else if (data.role == "teacher"){
+						// Redirect to page for teachers
+						window.location.href = 'index.html'
+					}else if (data.role == "curator"){
+						// Redirect to page for teachers
+						window.location.href = 'index.html'
+					}
+					// Redirect to another page, like a dashboard
+		
+				} catch (error) {
+					console.error('Error occurred:', error);
+					alert('An error occurred. Please try again.');
+				}
+			});
+		});
+	</script>
+		
+		
 	
 </body>
 </html>
